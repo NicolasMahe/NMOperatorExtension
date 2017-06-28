@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NMOperatorExtension_Example' do
+  pod 'NMOperatorExtension', :path => '../'
+
+  target 'NMOperatorExtension_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
