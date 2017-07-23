@@ -1,0 +1,6 @@
+framework module NMOperatorExtension {
+  umbrella header "NMOperatorExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

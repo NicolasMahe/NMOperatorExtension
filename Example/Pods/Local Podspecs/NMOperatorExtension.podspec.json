@@ -1,0 +1,22 @@
+{
+  "name": "NMOperatorExtension",
+  "version": "0.1.0",
+  "summary": "A short description of NMOperatorExtension.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/nicolas@mahe.me/NMOperatorExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "nicolas@mahe.me": "nicolas@mahe.me"
+  },
+  "source": {
+    "git": "https://github.com/nicolas@mahe.me/NMOperatorExtension.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NMOperatorExtension/Classes/**/*"
+}

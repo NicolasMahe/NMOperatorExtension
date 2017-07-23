@@ -1,0 +1,16 @@
+PODS:
+  - NMOperatorExtension (0.1.0)
+
+DEPENDENCIES:
+  - NMOperatorExtension (from `../`)
+
+EXTERNAL SOURCES:
+  NMOperatorExtension:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NMOperatorExtension: 20e283578f292c2215c17b7e9aca521348ff67a4
+
+PODFILE CHECKSUM: 4dfe87f53520650c63a45664c647cf422f3d7ecd
+
+COCOAPODS: 1.2.1
