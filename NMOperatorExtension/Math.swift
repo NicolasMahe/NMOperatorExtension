@@ -135,3 +135,67 @@ public func *=(lhs: inout Float?, rhs: Float?) {
 public func /=(lhs: inout Float?, rhs: Float?) {
   lhs = lhs / rhs
 }
+
+//----------------------------------------------------------------------------
+// MARK: - CGFloat
+//----------------------------------------------------------------------------
+
+public func +(lhs: CGFloat?, rhs: CGFloat?) -> CGFloat {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l + r
+  case let (l?, nil):
+    return l
+  case let (nil, r?):
+    return r
+  default:
+    return 0
+  }
+}
+
+public func -(lhs: CGFloat?, rhs: CGFloat?) -> CGFloat {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l + r
+  case let (l?, nil):
+    return l
+  case let (nil, r?):
+    return -r
+  default:
+    return 0
+  }
+}
+
+public func *(lhs: CGFloat?, rhs: CGFloat?) -> CGFloat {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l * r
+  default:
+    return 0
+  }
+}
+
+public func /(lhs: CGFloat?, rhs: CGFloat?) -> CGFloat {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l / r
+  default:
+    return 0
+  }
+}
+
+public func +=(lhs: inout CGFloat?, rhs: CGFloat?) {
+  lhs = lhs + rhs
+}
+
+public func -=(lhs: inout CGFloat?, rhs: CGFloat?) {
+  lhs = lhs - rhs
+}
+
+public func *=(lhs: inout CGFloat?, rhs: CGFloat?) {
+  lhs = lhs * rhs
+}
+
+public func /=(lhs: inout CGFloat?, rhs: CGFloat?) {
+  lhs = lhs / rhs
+}

@@ -8,7 +8,11 @@
 
 import UIKit
 
-public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+//----------------------------------------------------------------------------
+// MARK: - Inferior
+//----------------------------------------------------------------------------
+
+private func compareInferior<T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
     return l < r
@@ -18,8 +22,21 @@ public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     return false
   }
 }
+public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  return compareInferior(lhs: lhs, rhs: rhs)
+}
+public func < <T : Comparable>(lhs: T?, rhs: T) -> Bool {
+  return compareInferior(lhs: lhs, rhs: rhs)
+}
+public func < <T : Comparable>(lhs: T, rhs: T?) -> Bool {
+  return compareInferior(lhs: lhs, rhs: rhs)
+}
 
-public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+//----------------------------------------------------------------------------
+// MARK: - Superior
+//----------------------------------------------------------------------------
+
+private func compareSuperior<T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
     return l > r
@@ -29,8 +46,43 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     return false
   }
 }
+public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  return compareSuperior(lhs: lhs, rhs: rhs)
+}
+public func > <T : Comparable>(lhs: T?, rhs: T) -> Bool {
+  return compareSuperior(lhs: lhs, rhs: rhs)
+}
+public func > <T : Comparable>(lhs: T, rhs: T?) -> Bool {
+  return compareSuperior(lhs: lhs, rhs: rhs)
+}
 
-public func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+//----------------------------------------------------------------------------
+// MARK: - Inferior or equal
+//----------------------------------------------------------------------------
+
+private func compareInferiorOrEqual<T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(lhs > rhs)
+  }
+}
+public func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  return compareInferiorOrEqual(lhs: lhs, rhs: rhs)
+}
+public func <= <T : Comparable>(lhs: T?, rhs: T) -> Bool {
+  return compareInferiorOrEqual(lhs: lhs, rhs: rhs)
+}
+public func <= <T : Comparable>(lhs: T, rhs: T?) -> Bool {
+  return compareInferiorOrEqual(lhs: lhs, rhs: rhs)
+}
+
+//----------------------------------------------------------------------------
+// MARK: - Superior or equal
+//----------------------------------------------------------------------------
+
+private func compareSuperiorOrEqual<T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
     return l >= r
@@ -38,12 +90,12 @@ public func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     return !(lhs < rhs)
   }
 }
-
-public func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l <= r
-  default:
-    return !(lhs > rhs)
-  }
+public func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  return compareSuperiorOrEqual(lhs: lhs, rhs: rhs)
+}
+public func >= <T : Comparable>(lhs: T?, rhs: T) -> Bool {
+  return compareSuperiorOrEqual(lhs: lhs, rhs: rhs)
+}
+public func >= <T : Comparable>(lhs: T, rhs: T?) -> Bool {
+  return compareSuperiorOrEqual(lhs: lhs, rhs: rhs)
 }
